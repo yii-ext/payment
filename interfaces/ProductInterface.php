@@ -1,5 +1,5 @@
 <?php
-namespace \yii_ext\payment\interfaces;
+namespace yii_ext\payment\interfaces;
 
 
 /**

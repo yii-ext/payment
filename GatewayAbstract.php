@@ -1,7 +1,7 @@
 <?php
-namespace \yii_ext\payment;
+namespace yii_ext\payment;
 
-use \yii_ext\payment\models\BasePaymentModel;
+use yii_ext\payment\models\BasePaymentModel;
 
 /**
  * Class GatewayAbstract

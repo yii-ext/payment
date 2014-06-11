@@ -1,5 +1,5 @@
 <?php
-namespace \yii_ext\payment\models\enums;
+namespace yii_ext\payment\models\enums;
 
 
 /**

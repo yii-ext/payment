@@ -6,9 +6,9 @@
  * Time: 12:26
  */
 
-namespace \yii_ext\payment\forms;
+namespace yii_ext\payment\forms;
 
-use \yii_ext\payment\validators\ECCValidator;
+use yii_ext\payment\validators\ECCValidator;
 
 
 /**

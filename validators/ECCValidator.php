@@ -1,5 +1,5 @@
 <?php
-namespace \yii_ext\payment\validators;
+namespace yii_ext\payment\validators;
 
 use Yii;
 use CValidator;

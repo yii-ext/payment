@@ -1,5 +1,5 @@
 <?php
-namespace \yii_ext\payment\models;
+namespace yii_ext\payment\models;
 /**
  * Class BasePaymentModel
  * This is the model class for table "Payment".

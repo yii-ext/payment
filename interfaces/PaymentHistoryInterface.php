@@ -6,7 +6,7 @@
  * Time: 19:43
  */
 
-namespace \yii_ext\payment\interfaces;
+namespace yii_ext\payment\interfaces;
 
 
 /**

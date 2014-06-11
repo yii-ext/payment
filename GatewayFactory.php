@@ -1,7 +1,7 @@
 <?php
-namespace \yii_ext\payment;
+namespace yii_ext\payment;
 
-use \yii_ext\payment\interfaces\GatewayFactoryInterface;
+use yii_ext\payment\interfaces\GatewayFactoryInterface;
 
 /**
  * Class GatewayFactory
