@@ -1,0 +1,13 @@
+{
+    "name": "yii-ext/payment",
+    "description": "Payment module",
+    "homepage": "https://github.com/yii-ext/payment/",
+    "type": "yii-extension",
+    "authors": [
+        {
+            "name": "Dmitry Semenov",
+            "email": "disemx@gmail.com",
+            "homepage": "http://disem.org/"
+        }
+    ]
+}
