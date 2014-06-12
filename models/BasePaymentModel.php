@@ -6,19 +6,22 @@ namespace yii_ext\payment\models;
  * @author  Dmitry Semenov <disemx@gmail.com>
  *
  * The followings are the available columns in table 'Payment':
- * @property integer $id
- * @property integer $rootId
- * @property integer $userId
- * @property integer $productId
- * @property integer $transactionID
- * @property string  $amount
- * @property string  $status
- * @property string  $type
- * @property string  $message
- * @property string  $ip
- * @property string  $creationDate
- * @property string  $updatedDate
  * @package payment\models
+ * @property int id
+ * @property int rootId
+ * @property int userId
+ * @property int productId
+ * @property int transactionID
+ * @property string amount
+ * @property string status
+ * @property string type
+ * @property string message
+ * @property string ip
+ * @property string creationDate
+ * @property string updatedDate
+ * @method BasePaymentModel|CActiveRecord find()
+ * @method BasePaymentModel|CActiveRecord findByPK()
+ * @method BasePaymentModel|CActiveRecord findByAttributes()
  */
 class BasePaymentModel extends \CActiveRecord
 {
