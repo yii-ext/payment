@@ -1,8 +1,8 @@
 <?php
-namespace payment\gateways\braintree\models;
+namespace yii_ext\payment\gateways\braintree\models;
 
 
-use payment\forms\BasePaymentForm;
+use yii_ext\payment\forms\BasePaymentForm;
 
 /**
  * Class PaymentForm

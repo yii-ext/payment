@@ -7,9 +7,7 @@
  */
 
 namespace yii_ext\payment\forms;
-
 use yii_ext\payment\validators\ECCValidator;
-
 
 /**
  * Class BasePaymentForm
@@ -64,7 +62,7 @@ class BasePaymentForm extends \CFormModel
     {
         return array(
             array('creditCardNumber, expirationMonth, expirationYear, securityCode', 'required'),
-            array('creditCardNumber', 'payment\validators\ECCValidator', 'format' => array(ECCValidator::VISA, ECCValidator::MASTERCARD, ECCValidator::DISCOVER, ECCValidator::AMERICAN_EXPRESS)),
+            array('creditCardNumber', 'yii_ext\payment\validators\ECCValidator', 'format' => array(ECCValidator::VISA, ECCValidator::MASTERCARD, ECCValidator::DISCOVER, ECCValidator::AMERICAN_EXPRESS)),
             array('expirationMonth, expirationYear', 'validateDate'),
             //array('cardHolderName', 'validateName'),
             array('securityCode', 'numerical', 'min' => 0, 'max' => 9999),

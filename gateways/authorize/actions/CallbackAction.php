@@ -6,7 +6,7 @@
  * Time: 12:24
  */
 
-namespace payment\gateways\authorize\actions;
+namespace yii_ext\payment\gateways\authorize\actions;
 
 use Yii;
 use CJSON;

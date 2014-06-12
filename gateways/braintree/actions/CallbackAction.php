@@ -6,7 +6,7 @@
  * Time: 12:24
  */
 
-namespace payment\gateways\braintree\actions;
+namespace yii_ext\payment\gateways\braintree\actions;
 
 use Braintree_WebhookNotification;
 use Yii;

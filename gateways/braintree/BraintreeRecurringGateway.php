@@ -6,12 +6,12 @@
  * Time: 15:39
  */
 
-namespace payment\gateways\braintree;
+namespace yii_ext\payment\gateways\braintree;
 
 
-use payment\GatewayAbstract;
-use payment\gateways\braintree\models\PaymentForm;
-use payment\interfaces\PaymentRecurringInterface;
+use yii_ext\payment\GatewayAbstract;
+use yii_ext\payment\gateways\braintree\models\PaymentForm;
+use yii_ext\payment\interfaces\PaymentRecurringInterface;
 
 /**
  * Class BraintreeRecurringGateway

@@ -1,8 +1,8 @@
 <?php
-namespace payment\gateways\authorize\models;
+namespace yii_ext\payment\gateways\authorize\models;
 
 
-use payment\forms\BasePaymentForm;
+use yii_ext\payment\forms\BasePaymentForm;
 
 class PaymentForm extends BasePaymentForm
 {

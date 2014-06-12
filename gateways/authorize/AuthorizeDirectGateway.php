@@ -1,8 +1,8 @@
 <?php
-namespace payment\gateways\authorize;
+namespace yii_ext\payment\gateways\authorize;
 
-use payment\gateways\authorize\models\PaymentForm;
-use payment\interfaces\PaymentRecurringInterface;
+use yii_ext\payment\gateways\authorize\models\PaymentForm;
+use yii_ext\payment\interfaces\PaymentRecurringInterface;
 
 
 \Yii::import('application.vendor/vendors.*');
