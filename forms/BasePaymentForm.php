@@ -7,6 +7,7 @@
  */
 
 namespace yii_ext\payment\forms;
+
 use yii_ext\payment\validators\ECCValidator;
 
 /**
@@ -53,6 +54,7 @@ class BasePaymentForm extends \CFormModel
      * @var can be used to manipule price etc
      */
     public $productModel;
+    public $cvv;
 
     /**
      * Declares the validation rules.
