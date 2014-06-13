@@ -83,10 +83,8 @@ class BraintreeRecurringGateway extends GatewayAbstract implements PaymentRecurr
      */
     private function  getCustomer($data)
     {
-        //customer
-        try {
-            $customer = \Braintree_Customer::find($data['customerId']);
-        } catch (\Braintree_Exception_NotFound $e) {
+        $customer = $this->getCustomerById($data['customerId']);
+        if ($customer == false) {
             $customer = \Braintree_Customer::create(array(
                 'id' => $data['customerId'],
                 'firstName' => $data['firstName'],
@@ -94,6 +92,22 @@ class BraintreeRecurringGateway extends GatewayAbstract implements PaymentRecurr
                 'email' => $data['email'],
                 'phone' => $data['phone'],
             ));
+        }
+
+        return $customer;
+    }
+
+    /**
+     * @param $id
+     *
+     * @return object
+     */
+    public function  getCustomerById($id)
+    {
+        try {
+            $customer = \Braintree_Customer::find($id);
+        } catch (\Braintree_Exception_NotFound $e) {
+            return false;
         }
         return $customer;
     }
