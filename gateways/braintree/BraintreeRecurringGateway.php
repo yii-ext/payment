@@ -170,9 +170,24 @@ class BraintreeRecurringGateway extends GatewayAbstract implements PaymentRecurr
             'customerId' => $customer->customer->id,
             'number' => $data['creditCardNumber'],
             'expirationDate' => "{$data['expirationMonth']}/{$data['expirationYear']}",
-            'cardholderName' => $data['cardHolderName']
+            'cardholderName' => $data['cardHolderName'],
+            'cvv' => $data['cvv'],
+            'options' => array(
+                'makeDefault' => true
+            )
         ));
         return $card;
+    }
+
+    public function updateCard($token)
+    {
+        $updateResult = Braintree_CreditCard::update(
+            $token,
+            array(
+                'number' => '4111111111111111',
+                'expirationDate' => '07/14'
+            )
+        );
     }
 
     /**
