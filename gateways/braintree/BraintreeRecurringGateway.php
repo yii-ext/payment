@@ -112,6 +112,19 @@ class BraintreeRecurringGateway extends GatewayAbstract implements PaymentRecurr
         return $customer;
     }
 
+    public function getCustomerDefaultCard($customerId)
+    {
+        $customer = $this->getCustomerById($customerId);
+        if ($customer !== false) {
+            foreach ($customer->creditCards as $card) {
+                if ($card->isDefault()) {
+                    return $card;
+                }
+            }
+        }
+        return false;
+    }
+
     /**
      * @param $subscriptionId
      * @param $data
@@ -185,7 +198,7 @@ class BraintreeRecurringGateway extends GatewayAbstract implements PaymentRecurr
             'number' => $data['creditCardNumber'],
             'expirationDate' => "{$data['expirationMonth']}/{$data['expirationYear']}",
             'cardholderName' => $data['cardHolderName'],
-            'cvv' => $data['cvv'],
+            'cvv' => $data['securityCode'],
             'options' => array(
                 'makeDefault' => true
             )
@@ -200,7 +213,7 @@ class BraintreeRecurringGateway extends GatewayAbstract implements PaymentRecurr
             array(
                 'number' => $data['creditCardNumber'],
                 'expirationDate' => "{$data['expirationMonth']}/{$data['expirationYear']}",
-                'cvv' => $data['cvv'],
+                'cvv' => $data['securityCode'],
                 'options' => array(
                     'makeDefault' => true
                 )
