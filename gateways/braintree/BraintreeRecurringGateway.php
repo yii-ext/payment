@@ -206,7 +206,10 @@ class BraintreeRecurringGateway extends GatewayAbstract implements PaymentRecurr
                 )
             )
         );
-        var_dump($updateResult);
+        if ($updateResult->success == true) {
+            return true;
+        }
+        return $updateResult->message;
     }
 
     /**
