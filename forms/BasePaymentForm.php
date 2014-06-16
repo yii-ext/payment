@@ -55,6 +55,7 @@ class BasePaymentForm extends \CFormModel
      */
     public $productModel;
     public $cvv;
+    public $cancellationReason;
 
     /**
      * Declares the validation rules.
