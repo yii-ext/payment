@@ -11,7 +11,7 @@ namespace yii_ext\payment\models;
  * @property integer $rootId
  * @property integer $userId
  * @property integer $productId
- * @property integer $transactionID
+ * @property integer $transactionId
  * @property string $amount
  * @property string $status
  * @property string $type
@@ -52,15 +52,15 @@ class BasePaymentModel extends \CActiveRecord
     public function rules()
     {
         return array(
-            array('userId, productId, transactionID, amount, status, type, creationDate', 'required'),
-            array('rootId, userId, productId, transactionID', 'numerical', 'integerOnly' => true),
+            array('userId, productId, transactionId, amount, status, type, creationDate', 'required'),
+            array('rootId, userId, productId, transactionId', 'numerical', 'integerOnly' => true),
             array('amount, status', 'length', 'max' => 10),
             array('type', 'length', 'max' => 50),
             array('message', 'length', 'max' => 256),
             array('ip', 'length', 'max' => 20),
             array('updatedDate', 'safe'),
             array('rootId, message, ip, updatedDate', 'default', 'setOnEmpty' => true, 'value' => null),
-            array('id, rootId, userId, productId, transactionID, amount, status, type, message, ip, creationDate, updatedDate', 'safe', 'on' => 'search'),
+            array('id, rootId, userId, productId, transactionId, amount, status, type, message, ip, creationDate, updatedDate', 'safe', 'on' => 'search'),
         );
     }
 
@@ -74,7 +74,7 @@ class BasePaymentModel extends \CActiveRecord
             'rootId' => Yii::t('app', 'Root'),
             'userId' => Yii::t('app', 'User'),
             'productId' => Yii::t('app', 'Product'),
-            'transactionID' => Yii::t('app', 'Transaction'),
+            'transactionId' => Yii::t('app', 'Transaction'),
             'amount' => Yii::t('app', 'Amount'),
             'status' => Yii::t('app', 'Status'),
             'type' => Yii::t('app', 'Type'),
