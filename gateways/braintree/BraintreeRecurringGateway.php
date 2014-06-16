@@ -161,12 +161,22 @@ class BraintreeRecurringGateway extends GatewayAbstract implements PaymentRecurr
      */
     public function voidTransaction($transactionId)
     {
-        $result = \Braintree_Transaction::void($transactionId);
-        if ($result->success) {
-            return $this->response(true);
-        } else {
-            return $this->response(false, $result->errors);
+        try {
+            $transaction = \Braintree_Transaction::find($transactionId);
+        } catch (\Exception $e) {
+            return false;
         }
+        if ($transaction) {
+            if ($transaction->status == \Braintree_Transaction::AUTHORIZED || $transaction->status == \Braintree_Transaction::SUBMITTED_FOR_SETTLEMENT) {
+                $result = \Braintree_Transaction::void($transactionId);
+            } else {
+                $result = \Braintree_Transaction::refund($transactionId);
+            }
+            if ($result->success == true) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**

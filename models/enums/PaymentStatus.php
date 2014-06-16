@@ -2,9 +2,13 @@
 namespace yii_ext\payment\models\enums;
 
 
+    /**
+     * Class PaymentStatus
+     * @package payment\models\enums
+     */
 /**
  * Class PaymentStatus
- * @package payment\models\enums
+ * @package yii_ext\payment\models\enums
  */
 class PaymentStatus extends \CEnumerable
 {
@@ -25,6 +29,14 @@ class PaymentStatus extends \CEnumerable
      * @var int db representation for Refused status
      */
     const REFUSED = 4;
+    /**
+     * @var int db representation for Voided status
+     */
+    const VOID = 5;
+    /**
+     * @var int db representation for Refund status
+     */
+    const REFUND = 6;
 
     /**
      * @return array of key => values
@@ -36,6 +48,8 @@ class PaymentStatus extends \CEnumerable
             self::COMPLETED => 'Completed',
             self::CANCELLED => 'Cancelled',
             self::REFUSED => 'Refused',
+            self::VOID => 'Void',
+            self::REFUND => 'Refund',
         );
     }
 
